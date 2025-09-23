@@ -1,7 +1,12 @@
-﻿namespace JadooTravel.Entites
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
+namespace JadooTravel.Entites
 {
     public class Destination
     {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)] // MongoDB bu filed'ı PK Olarak kullanır ve ObjectId türünde saklar.
         public string DestionationId { get; set; }
         public string CityCountry { get; set; }
         public string ImageUrl { get; set; }

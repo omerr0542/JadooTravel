@@ -29,7 +29,7 @@ namespace JadooTravel.Services.DestinationServices
 
         public async Task DeleteDestinationAsync(string id)
         {
-            await _destinationCollection.DeleteOneAsync(x => x.DestionationId == id);
+            await _destinationCollection.DeleteOneAsync(x => x.DestinationId == id);
         }
 
         public async Task<List<ResultDestinationDto>> GetAllDestinationAsync()
@@ -40,14 +40,14 @@ namespace JadooTravel.Services.DestinationServices
 
         public async Task<GetDestinationByIdDto> GetDestinationByIdAsync(string id)
         {
-            var value =  await _destinationCollection.Find(x => x.DestionationId == id).FirstOrDefaultAsync(); // Belirli bir belgeyi getirir
+            var value =  await _destinationCollection.Find(x => x.DestinationId == id).FirstOrDefaultAsync(); // Belirli bir belgeyi getirir
             return _mapper.Map<GetDestinationByIdDto>(value); // Entity'yi Dto'ya dönüştürür
         }
 
         public async Task UpdateDestinationAsync(UpdateDestinationDto updateDestinationDto)
         {
             var value = _mapper.Map<Destination>(updateDestinationDto); // Dto'dan Entity'e dönüşüm
-            await _destinationCollection.FindOneAndReplaceAsync(x => x.DestionationId == updateDestinationDto.DestionationId, value); // Belgeyi günceller
+            await _destinationCollection.FindOneAndReplaceAsync(x => x.DestinationId == updateDestinationDto.DestinationId, value); // Belgeyi günceller
         }
     }
 }

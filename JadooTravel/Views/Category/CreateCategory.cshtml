@@ -1,0 +1,17 @@
+﻿@model JadooTravel.Dtos.CategoryDtos.ResultCategoryDto
+
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br />
+    <br />
+    <form method ="post">
+        <input type="text" asp-for="CategoryName" placeholder="Kategori Adını Giriniz" class="form-control"/>
+        <br />
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </form>
+</div>

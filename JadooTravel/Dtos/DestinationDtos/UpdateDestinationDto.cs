@@ -2,7 +2,7 @@
 
 public class UpdateDestinationDto
 {
-    public string DestionationId { get; set; }
+    public string DestinationId { get; set; }
     public string CityCountry { get; set; }
     public string ImageUrl { get; set; }
     public decimal Price { get; set; }
